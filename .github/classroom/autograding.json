@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "ExecutingTests &#45; Shopping Cart Unit Tests",
+      "setup": "",
+      "run": "./gradlew executingtests-shoppingcart-test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Executing Tests PlantUML Diagrams",
+      "setup": "",
+      "run": "./gradlew executingtests-writingcases-test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Executing Tests Using PlantUML Tools",
+      "setup": "",
+      "run": "./gradlew executingtests-plantuml-test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
