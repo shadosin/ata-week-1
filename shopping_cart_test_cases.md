@@ -101,8 +101,8 @@ Replace anything in brackets "[ ]" with the appropriate replacement--there shoul
 1. **addItem_withEmptyItemName_isRejected**
     * **Description**: empty string item name - reject
     * GIVEN
-        * [What given is needed]
-        * [What other given is needed?]
+        * Empty ShoppingCart
+        * Empty item name
     * WHEN
         1. Add a new item by calling `addItem()` with itemName "", positive quantity
     * THEN
@@ -117,19 +117,19 @@ Replace anything in brackets "[ ]" with the appropriate replacement--there shoul
     * WHEN
         1. Add a new item by calling `addItem()` with non-empty itemName, negative quantity
     * THEN
-        * [What happens in this situation?]
-        * [Take a look above if necessary]
+        * 'addItem()' returns false
+        * The ShoppingCart remains empty
 
 1. **addItem_withZeroQuantity_isRejected**
     * **Description**: zero quantity - reject
     * GIVEN
-        * [Provide a given]
-        * [Provide a given]
+        * Empty ShoppingCart
+        * Zero quantity of item
     * WHEN
         1. Add a new item by calling `addItem()` with non-empty itemName, zero quantity
     * THEN
-        * [What is returned?]
-        * [What is the ShoppingCart's status? Has anything changed?]
+        * 'addItem()' returns false
+        * ShoppingCart remains empty
 
 ## Your Test Plan for updateQuantity()
 
@@ -162,7 +162,7 @@ Replace anything in brackets "[ ]" with the appropriate replacement--there shoul
    * **Description**: null item name - reject
    * GIVEN
       * ShoppingCart with one item
-      * [What else should be given?]
+      * null item name
    * WHEN
       1. Call `updateQuantity()` with null itemName and positive quantity
    * THEN
@@ -174,12 +174,12 @@ Replace anything in brackets "[ ]" with the appropriate replacement--there shoul
    * **Description**: empty string item name - reject
    * GIVEN
       * ShoppingCart with one item
-      * [What else is given?]
+      * empty itemName
    * WHEN
       1. Call `updateQuantity()` with itemName "" and positive quantity
    * THEN
       * `updateQuantity()` returns false
-      * ShoppingCart [test1: does or does not?] contain an item with empty string itemName
+      * ShoppingCart does not contain an item with empty string itemName
       * ShoppingCart still contains original item with original quantity
 
 1. **updateQuantity_onItemNotInCart_isRejected**
@@ -191,14 +191,14 @@ Replace anything in brackets "[ ]" with the appropriate replacement--there shoul
       1. Call `updateQuantity()` with a different item name and positive quantity
    * THEN
       * `updateQuantity()` returns false
-      * ShoppingCart [test2: does or does not?] contain an item with the new itemName
+      * ShoppingCart does not contain an item with the new itemName
       * ShoppingCart still contains original item with original quantity
 
 1. **updateQuantity_withNegativeQuantity_isRejected**
    * **Description**: existing item and negative quantity - reject
    * GIVEN
       * ShoppingCart with one item
-      * [What else is given based on the test name?]
+      * negative item quantity
    * WHEN
       1. Call `updateQuantity()` with the same itemName but negative quantity
    * THEN

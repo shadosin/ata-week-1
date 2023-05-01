@@ -56,7 +56,7 @@ public class ShoppingCartTest {
         ShoppingCart cart = new ShoppingCart();
 
         // WHEN - Add a new item by calling `addItem()` with non-empty itemName, negative quantity
-        boolean result = cart.addItem("Desk chair", 2);
+        boolean result = cart.addItem("Desk chair", -2);
 
         // THEN
         // `addItem()` should fail
@@ -80,7 +80,7 @@ public class ShoppingCartTest {
         ShoppingCart cart = new ShoppingCart();
 
         // WHEN - Add a new item by calling `addItem()` with non-empty itemName, zero quantity
-        boolean result = cart.addItem("Head First Java", 2);
+        boolean result = cart.addItem("Head First Java", 0);
 
         // THEN
         // `addItem()` should fail
@@ -132,7 +132,7 @@ public class ShoppingCartTest {
     @Test
     public void updateQuantity_withNullItemName_isRejected() {
         // GIVEN - ShoppingCart with one item
-        String existingItem = "Binoculars";
+        String existingItem = null;
         int originalQuantity = 1;
         ShoppingCart cart = new ShoppingCart();
         cart.addItem(existingItem, originalQuantity);
@@ -164,7 +164,7 @@ public class ShoppingCartTest {
     @Test
     public void updateQuantity_withEmptyItemName_isRejected() {
         // GIVEN - ShoppingCart with one item
-        String existingItem = "HDMI Cables (set of 6)";
+        String existingItem = "";
         int originalQuantity = 4;
         ShoppingCart cart = new ShoppingCart();
         cart.addItem(existingItem, originalQuantity);

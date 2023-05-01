@@ -1,0 +1,16 @@
+@startuml
+class com.kenzie.executingtests.shoppingcart.ShoppingCartItem {
+- String itemName
+- int quantity
++ String getItemName()
++ int getQuantity()
++ String toString()
+}
+class com.kenzie.executingtests.shoppingcart.ShoppingCart {
+- Map<String,ShoppingCartItem> items
++ boolean addItem(String,int)
++ boolean updateQuantity(String,int)
++ ShoppingCartItem[] getItems()
+- boolean isItemNameValid(String)
+}
+@enduml
